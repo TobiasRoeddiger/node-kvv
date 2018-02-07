@@ -1,6 +1,6 @@
 {
   "name": "node-kvv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper for the KVV live API",
   "main": "index.js",
   "scripts": {
@@ -22,8 +22,6 @@
   },
   "homepage": "https://github.com/r0ehre/node-kvv#readme",
   "dependencies": {
-    "express": "^4.16.2",
-    "request": "^2.83.0",
-    "then-request": "^5.0.0"
+    "request": "^2.83.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "node-kvv",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A wrapper for the KVV live API",
   "main": "index.js",
   "scripts": {

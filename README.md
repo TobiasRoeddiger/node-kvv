@@ -1,4 +1,4 @@
-# node-kvv
+# node-kvv [![npm version](https://badge.fury.io/js/node-kvv.svg)](https://badge.fury.io/js/node-kvv)
 Node.js wrapper for the KVV (Karlsruher Verkehrsverbund) live API. 🚄
 
 ## Installation

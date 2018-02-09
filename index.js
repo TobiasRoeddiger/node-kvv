@@ -1,3 +1,5 @@
+var exports = module.exports = {};
+
 const request = require('request');
 
 const API_KEY = '377d840e54b59adbe53608ba1aad70e8';
@@ -34,15 +36,14 @@ function encode(value) {
     return encodeURIComponent(value);
 }
 
-module.exports = {
 /**
  * Search for stops by name.
  * @param {*} name Name of the stop to look for.
  * @param {*} maxInfos Maximum number of stops to return.
  */
-searchStopsByName: async function (name, maxInfos = 2) {
+exports.searchStopsByName = async function (name, maxInfos = 2) {
     return (await query(SEARCH_STOP_BY_NAME_PATH + encode(name)))[STOPS_IDENTIFIER].slice(0, maxInfos);
-},
+};
 
 /**
  * Search for stops by latitude and longitude.
@@ -50,26 +51,26 @@ searchStopsByName: async function (name, maxInfos = 2) {
  * @param {*} longitude Longitude of the position.
  * @param {*} maxInfos Maximum number of stops to return.
  */
-searchStopsByLatLong: async function (latitude, longitude, maxInfos = 2) {
+exports.searchStopsByLatLong = async function (latitude, longitude, maxInfos = 2) {
     return (await query(SEARCH_STOP_BY_LAT_LONG_PATH + encode(latitude) + '/' + encode(longitude)))[STOPS_IDENTIFIER].slice(0, maxInfos);
-},
+};
 
 /**
  * Search for a stop by the respective stop ID.
  * @param {*} stopId The stop ID to look for.
  */
-searchStopByStopId: async function (stopId) {
+exports.searchStopByStopId = async function (stopId) {
     return (await query(SEARCH_STOP_BY_STOP_ID_PATH + encode(stopId)));
-},
+};
 
 /**
  * Search for departures by stop ID.
  * @param {*} stopId The stop ID that departures should be 
  * @param {*} maxInfos Maximum number of departures to return.
  */
-getDepartures: async function (stopId, maxInfos = 4) {
+exports.getDepartures = async function (stopId, maxInfos = 4) {
     return (await query(GET_DEPARTURES_BY_STOPID_PATH + encode(stopId), {'maxInfos': maxInfos}));
-},
+};
 
 /**
  * 
@@ -77,7 +78,6 @@ getDepartures: async function (stopId, maxInfos = 4) {
  * @param {*} route 
  * @param {*} max_info 
  */
-getDeparturesByRoute: async function (stopId, route, max_info=4) {
+exports.getDeparturesByRoute = async function (stopId, route, max_info=4) {
     return (await query(GET_DEPARTURES_BY_ROUTE_PATH + encode(route) + '/' + encode(stopId), {'maxInfos': maxInfos}));
-}
 };

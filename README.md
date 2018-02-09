@@ -8,7 +8,7 @@ npm install node-kvv --save
 ```
 ## Usage
 ```js
-var nodeKvv = require('node-kvv')
+var nodeKvv = require('node-kvv');
 
 // Searching stops by name
 nodeKvv.searchStopsByName('Karlsruhe Marktplatz');
